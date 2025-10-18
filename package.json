@@ -5,8 +5,8 @@
   "main": "init.js",
   "scripts": {
     "build": "tsc",
-    "start": "node ./dist/tictactoe.js",
-    "dev": "npm run build && npm run start"
+    "play": "node ./dist/tictactoe.js",
+    "dev": "npm run build && npm run play"
   },
   "dependencies": {
     "@types/node": "24.5.2",
