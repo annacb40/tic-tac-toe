@@ -4,4 +4,5 @@ export enum PLAYER {
   O, // 2
 }
 
-export type Board = PLAYER[][];
+type Row = [PLAYER, PLAYER, PLAYER];
+export type Board = [Row, Row, Row];
