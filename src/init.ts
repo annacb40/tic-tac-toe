@@ -2,7 +2,6 @@ import { PLAYER } from "./types";
 import { printBoard } from "./print";
 import { turn } from "./turn";
 
-// init
 const initBoard = [0, 0, 0].map((i) => [PLAYER.None, PLAYER.None, PLAYER.None]);
 printBoard(initBoard);
 let isXTurn = Math.round(Math.random()) === 0;

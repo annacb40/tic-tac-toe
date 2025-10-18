@@ -3,3 +3,5 @@ export enum PLAYER {
   X, // 1
   O, // 2
 }
+
+export type Board = PLAYER[][];

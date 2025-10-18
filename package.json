@@ -2,7 +2,7 @@
   "name": "tic-tac-tow",
   "version": "1.0.0",
   "description": "",
-  "main": "tictactoe.js",
+  "main": "init.js",
   "scripts": {
     "build": "tsc",
     "start": "node ./dist/tictactoe.js",
