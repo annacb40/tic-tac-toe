@@ -13,7 +13,7 @@ export const turn = async (
     return turn(currentBoard, currentPlayer);
   }
   const { row, col } = turnPosition;
-  currentBoard[row]?.[col] && (currentBoard[row][col] = currentPlayer);
+  currentBoard[row][col] = currentPlayer;
 
   const endGameStatus = checkEndGame(currentBoard);
   if (endGameStatus.ended) {

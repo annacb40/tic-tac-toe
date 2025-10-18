@@ -1,6 +1,6 @@
 import { createInterface } from "readline";
 import { toPlayerString } from "./print";
-import { Board, PLAYER } from "./types";
+import { Board, PLAYER, Position } from "./types";
 
 export const readLine = createInterface({
   input: process.stdin,
@@ -19,10 +19,7 @@ export const askQuestion = (question: string): Promise<string> => {
 export const getTurnPosition = async (
   currentPlayer: PLAYER,
   currentBoard: Board
-): Promise<{
-  row: number;
-  col: number;
-}> => {
+): Promise<Position | undefined> => {
   const position = await askQuestion(
     `Player ${toPlayerString(
       currentPlayer
@@ -49,5 +46,5 @@ export const getTurnPosition = async (
     // return turn(currentBoard, currentPlayer);
   }
 
-  return { row, col };
+  return { row, col } as Position;
 };
