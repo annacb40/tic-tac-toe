@@ -1,4 +1,4 @@
-export enum PLAYER {
+export enum Player {
   None, // 0
   X, // 1
   O, // 2
@@ -10,5 +10,5 @@ export type Position = {
   row: RowNumber;
   col: ColNumber;
 };
-type Row = [PLAYER, PLAYER, PLAYER];
+type Row = [Player, Player, Player];
 export type Board = [Row, Row, Row];

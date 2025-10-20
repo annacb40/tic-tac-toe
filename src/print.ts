@@ -1,12 +1,12 @@
-import { PLAYER } from "./types";
+import { Player } from "./types";
 
-export const toPlayerString = (status: PLAYER) => {
+export const toPlayerString = (status: Player) => {
   switch (status) {
-    case PLAYER.None:
+    case Player.None:
       return " ";
-    case PLAYER.X:
+    case Player.X:
       return "X";
-    case PLAYER.O:
+    case Player.O:
       return "O";
   }
 };

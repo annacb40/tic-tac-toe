@@ -1,4 +1,4 @@
-import { PLAYER } from "./types";
+import { Player } from "./types";
 
 export const checkEndGame = (board: number[][]) => {
   const winner = checkWin(board);
@@ -7,7 +7,7 @@ export const checkEndGame = (board: number[][]) => {
   }
 
   const isDraw = board.every((row) =>
-    row.every((cell) => cell !== PLAYER.None)
+    row.every((cell) => cell !== Player.None)
   );
   if (isDraw) {
     // TODO better draw handling
@@ -17,10 +17,10 @@ export const checkEndGame = (board: number[][]) => {
   return { ended: false };
 };
 
-const checkWin = (board: number[][]): PLAYER | undefined => {
+const checkWin = (board: number[][]): Player | undefined => {
   // check rows
   board.forEach((row) => {
-    if (row[0] !== PLAYER.None && row[0] === row[1] && row[1] === row[2]) {
+    if (row[0] !== Player.None && row[0] === row[1] && row[1] === row[2]) {
       return row[0];
     }
   });
@@ -28,7 +28,7 @@ const checkWin = (board: number[][]): PLAYER | undefined => {
   // check columns
   for (let col = 0; col < 3; col++) {
     if (
-      board[0]?.[col] !== PLAYER.None &&
+      board[0]?.[col] !== Player.None &&
       board[0]?.[col] === board[1]?.[col] &&
       board[1]?.[col] === board[2]?.[col]
     ) {
@@ -38,7 +38,7 @@ const checkWin = (board: number[][]): PLAYER | undefined => {
 
   // check left diagonal
   if (
-    board[0]?.[0] !== PLAYER.None &&
+    board[0]?.[0] !== Player.None &&
     board[0]?.[0] === board[1]?.[1] &&
     board[1]?.[1] === board[2]?.[2]
   ) {
@@ -47,7 +47,7 @@ const checkWin = (board: number[][]): PLAYER | undefined => {
 
   // check right diagonal
   if (
-    board[0]?.[2] !== PLAYER.None &&
+    board[0]?.[2] !== Player.None &&
     board[0]?.[2] === board[1]?.[1] &&
     board[1]?.[1] === board[2]?.[0]
   ) {

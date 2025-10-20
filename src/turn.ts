@@ -1,11 +1,11 @@
 import { askQuestion, getTurnPosition, readLine } from "./input";
 import { printBoard, toPlayerString } from "./print";
 import { checkEndGame } from "./checkEndGame";
-import { Board, PLAYER } from "./types";
+import { Board, Player } from "./types";
 
 export const turn = async (
   currentBoard: Board,
-  currentPlayer: PLAYER.X | PLAYER.O
+  currentPlayer: Player.X | Player.O
 ): Promise<undefined> => {
   printBoard(currentBoard);
   const turnPosition = await getTurnPosition(currentPlayer, currentBoard);
@@ -25,6 +25,6 @@ export const turn = async (
     }
     readLine.close();
   } else {
-    return turn(currentBoard, currentPlayer === PLAYER.X ? PLAYER.O : PLAYER.X);
+    return turn(currentBoard, currentPlayer === Player.X ? Player.O : Player.X);
   }
 };
